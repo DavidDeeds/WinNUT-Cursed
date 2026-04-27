@@ -1,0 +1,115 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <ProjectGuid>{194AB29D-1F80-497B-86BE-4F35DACBA6BC}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net48</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWindowsForms>true</UseWindowsForms>
+    <RootNamespace>WinNUT_Client</RootNamespace>
+    <AssemblyName>WinNUT-Client</AssemblyName>
+    <ApplicationIcon>Resources\WinNut.ico</ApplicationIcon>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+    <LangVersion>latest</LangVersion>
+    <Deterministic>false</Deterministic>
+    <GenerateAssemblyInfo>true</GenerateAssemblyInfo>
+    <AssemblyTrademark>https://github.com/nutdotnet/WinNUT-Client</AssemblyTrademark>
+    <StartupObject>WinNUT_Client.Program</StartupObject>
+    <GenerateResourceUsePreserializedResources>true</GenerateResourceUsePreserializedResources>
+    <NoWarn>$(NoWarn);CS8618;CS0414</NoWarn>
+    <!-- English-only UI; do not emit non-English satellite assemblies. -->
+    <SatelliteResourceLanguages>en</SatelliteResourceLanguages>
+  </PropertyGroup>
+  <!-- ClickOnce (same URLs as legacy VB project; CI passes ApplicationVersion). -->
+  <PropertyGroup>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Background</UpdateMode>
+    <UpdateInterval>1</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>true</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <InstallUrl>https://nutdotnet.github.io/WinNUT-Client/</InstallUrl>
+    <SupportUrl>https://github.com/nutdotnet/WinNUT-Client/issues</SupportUrl>
+    <ProductName>WinNUT</ProductName>
+    <PublisherName>NUTDotNet</PublisherName>
+    <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion Condition="'$(ApplicationVersion)' == ''">$(Version).0</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>false</BootstrapperEnabled>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>false</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(PublishDir)' != ''">
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WinNUT.Client.Common\WinNUT.Client.Common.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="AGauge.Classic" Version="2.1.1-prerelease.2" />
+    <PackageReference Include="Microsoft.Toolkit.Uwp.Notifications" Version="7.1.3" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="Octokit" Version="13.0.1" />
+    <PackageReference Include="System.Resources.Extensions" Version="8.0.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Deployment" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Properties\Settings.Designer.cs">
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DependentUpon>Resources.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Update="WinNUT.resx">
+      <DependentUpon>WinNUT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Update="AboutGui.resx">
+      <DependentUpon>AboutGui.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Update="PrefGui.resx">
+      <DependentUpon>PrefGui.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Update="ShutdownGui.resx">
+      <DependentUpon>ShutdownGui.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Update="ListVarGui.resx">
+      <DependentUpon>ListVarGui.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Update="UpgradePrefsDialog.resx">
+      <DependentUpon>UpgradePrefsDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Update="UpdateAvailableForm.resx">
+      <DependentUpon>UpdateAvailableForm.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <Target Name="EnsureReferencePathCopyLocalMetadata" AfterTargets="ResolveAssemblyReferences" Condition="'$(GenerateManifests)' == 'true'">
+    <ItemGroup>
+      <ReferencePath Update="@(ReferencePath)" CopyLocal="false" Condition="'%(ReferencePath.CopyLocal)' == ''" />
+    </ItemGroup>
+  </Target>
+</Project>

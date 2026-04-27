@@ -1,0 +1,16 @@
+<Project>
+  <PropertyGroup>
+    <Version Condition="'$(Version)' == ''">2.3.0</Version>
+    <Company>NUTDotNet</Company>
+    <Product>WinNUT Client</Product>
+    <Copyright>NUTDotNet contributors © 2019–2024</Copyright>
+    <NeutralLanguage>en-US</NeutralLanguage>
+  </PropertyGroup>
+  <!-- PreRelease matches former VB solution configuration (installer / CI). -->
+  <PropertyGroup Condition="'$(Configuration)' == 'PreRelease'">
+    <Optimize>true</Optimize>
+    <DebugType>embedded</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+    <DefineConstants>$(DefineConstants);TRACE</DefineConstants>
+  </PropertyGroup>
+</Project>

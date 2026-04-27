@@ -13514,7 +13514,7 @@
             }
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_36B595BD31DB4EADBA77A31877C02F2F"
             {
-            "SourcePath" = "8:..\\WinNUT-Client_Common\\obj\\PreRelease\\WinNUT-Client_Common.dll"
+            "SourcePath" = "8:..\\WinNUT.Client.Common\\bin\\PreRelease\\net48\\WinNUT-Client_Common.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_7A1917372AF14D75845D775AAEB7CD48"
@@ -13570,7 +13570,7 @@
             }
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_D20AE0448FA041DB8F5DD65C05E507C1"
             {
-            "SourcePath" = "8:..\\WinNUT-Client\\obj\\PreRelease\\WinNUT-Client.exe"
+            "SourcePath" = "8:..\\WinNUT.Client\\bin\\PreRelease\\net48\\WinNUT-Client.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_7A1917372AF14D75845D775AAEB7CD48"
