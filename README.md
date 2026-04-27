@@ -8,6 +8,39 @@ The migration is already well underway: the new `WinNUT.Client` and `WinNUT.Clie
 
 This repository is a fork of [nutdotnet/WinNUT-Client](https://github.com/nutdotnet/WinNUT-Client). That project was previously moved over from [gawindx/WinNUT-Client](https://github.com/gawindx/WinNUT-Client), where much of the modern WinNUT V2 Visual Basic .NET work was maintained. Looking further back, the broader WinNUT history also traces through older WinNUT and Windows NUT client efforts, including the earlier AutoIt-era lineage documented by the original project history on [SourceForge](https://sourceforge.net/projects/winnutclient/) and by [Network UPS Tools related projects](https://networkupstools.org/projects.html).
 
+## Timeline
+
+```mermaid
+flowchart LR
+    A["2006: Original WinNUT<br/>initial project later abandoned at v2.0.0b"]
+    B["2010-2011: WinNUT re-hosted on Google Code<br/>then abandoned again"]
+    C["2007-2015: Windows NUT client on SourceForge<br/>matrix200 keeps the Windows client alive"]
+    D["2016+: Windows-Nut AutoIt remix<br/>crazytiti revives the older scripting-era code"]
+    E["2019-2021: gawindx/WinNUT-Client<br/>modern GitHub home, VB.NET era"]
+    F["2021: WinNUT V2 rewrite in Visual Basic .NET"]
+    G["2022-2025: nutdotnet/WinNUT-Client<br/>continued maintenance under NUT Dot Net"]
+    H["2022: Coco.Nut announced<br/>future-facing modern C# successor concept"]
+    I["2026: WinNUT-Cursed<br/>Cursor AI agent-driven migration from VB.NET to C#"]
+
+    A --> B
+    C --> D
+    C --> E
+    E --> F --> G --> I
+    G --> H
+```
+
+| Period | Incarnation | Main tech / home | Notes |
+| --- | --- | --- | --- |
+| 2006 | Original `WinNUT` | Early Windows client | The NUT project history says the original project was abandoned in 2006 at version `2.0.0b`. |
+| 2007-2015 | `Windows NUT client` | SourceForge / Windows desktop client | The broader Windows client line was hosted on SourceForge by `matrix200` and carried the project name forward. |
+| 2010-2011 | `WinNUT` re-host | Google Code archive | The NUT project history says the older `WinNUT` codebase was re-hosted on Google Code in 2010 and abandoned again in 2011. |
+| 2016+ | `Windows-Nut` | AutoIt remix | `crazytiti/Windows-Nut` describes itself as a remix of the original Windows NUT client. |
+| 2019-2021 | `gawindx/WinNUT-Client` | GitHub / Visual Basic .NET era | This is the modern GitHub-era WinNUT home credited to Gawindx (Decaux Nicolas). |
+| 2021 | `WinNUT-Client V2` | Visual Basic .NET rewrite | The local changelog records version `2.0.0.0` as a complete rewrite of WinNUT in Visual Basic. |
+| 2022-2025 | `nutdotnet/WinNUT-Client` | GitHub / NUT Dot Net stewardship | The project moved into the `nutdotnet` organization for ongoing maintenance and releases. |
+| 2022 | `Coco.Nut` | Future-oriented C# concept | Announced by the maintainers as the longer-term modern successor direction rather than a direct continuation of this WinForms codebase. |
+| 2026 | `WinNUT-Cursed` | Cursor AI migration repo | This repository focuses on translating the existing VB.NET WinForms application into C# while preserving behavior. |
+
 ## Current Focus
 
 - Preserve the existing WinNUT desktop behavior while porting the implementation to C#.
