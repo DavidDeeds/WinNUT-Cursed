@@ -25,11 +25,11 @@ jobs:
 
       # dotnet CLI builds SDK projects; .vdproj is opened in Visual Studio for the MSI.
       - name: Build solution
-        run: dotnet build WinNUT_V2/WinNUT_V2.sln -c Debug --verbosity minimal
+        run: dotnet build WinNUT-Cursed/WinNUT-Cursed.sln -c Debug --verbosity minimal
 
       - name: Upload Artifact
         uses: actions/upload-artifact@v4
         with:
           name: ${{ format('WinNUT-Client-debugbuild-{0}', env.SHORT_SHA) }}
           if-no-files-found: error
-          path: WinNUT_V2/WinNUT.Client/bin/Debug/net48
+          path: WinNUT-Cursed/WinNUT.Client/bin/Debug/net48

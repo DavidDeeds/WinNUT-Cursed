@@ -38,7 +38,7 @@ jobs:
           }
       
       - name: Publish WinNUT.Client (ClickOnce / publish output)
-        working-directory: WinNUT_V2
+        working-directory: WinNUT-Cursed
         run: >
           dotnet publish "WinNUT.Client\WinNUT.Client.csproj"
           -c "${{ steps.build-mode.outputs.BUILD_MODE }}"
@@ -54,10 +54,10 @@ jobs:
       
       # SDK-style `dotnet publish` currently emits a flat folder; full ClickOnce (.application + Application Files) may be absent.
       - name: Prep ClickOnce branch and deploy
-        if: hashFiles('WinNUT_V2/WinNUT.Client/publish/WinNUT-Client.application') != ''
+        if: hashFiles('WinNUT-Cursed/WinNUT.Client/publish/WinNUT-Client.application') != ''
         working-directory: gh-pages
         run: |
-          $outDir = "WinNUT_V2/WinNUT.Client/publish"
+          $outDir = "WinNUT-Cursed/WinNUT.Client/publish"
           Write-Output "Removing previous files..."
           if (Test-Path "Application Files") {
               Remove-Item -Path "Application Files" -Recurse
@@ -77,14 +77,14 @@ jobs:
       
       - name: Prepare no install archive
         run: |
-          $arc = Compress-Archive -PassThru -Path "WinNUT_V2\WinNUT.Client\bin\${{ steps.build-mode.outputs.BUILD_MODE }}\net48" -DestinationPath "${{ env.ARCHIVE_NAME }}-${{ steps.get-ver.outputs.SEMVER }}.zip"
+          $arc = Compress-Archive -PassThru -Path "WinNUT-Cursed\WinNUT.Client\bin\${{ steps.build-mode.outputs.BUILD_MODE }}\net48" -DestinationPath "${{ env.ARCHIVE_NAME }}-${{ steps.get-ver.outputs.SEMVER }}.zip"
           $arc = $arc -replace '\\','/'
           echo "ARCHIVE_NAME=$arc" >> $env:GITHUB_ENV
       
       # Rename the CO bootstrapper file to appear after the MSI once it's uploaded.
       - name: HACK - Rename ClickOnce bootstrapper
-        if: hashFiles('WinNUT_V2/WinNUT.Client/publish/WinNUT-Client.application') != ''
-        run: Rename-Item -Path "./WinNUT_V2/WinNUT.Client/publish/WinNUT-Client.application" -NewName "_WinNUT-Client-ClickOnce-Installer.application"
+        if: hashFiles('WinNUT-Cursed/WinNUT.Client/publish/WinNUT-Client.application') != ''
+        run: Rename-Item -Path "./WinNUT-Cursed/WinNUT.Client/publish/WinNUT-Client.application" -NewName "_WinNUT-Client-ClickOnce-Installer.application"
 
       - name: Create GitHub release
         uses: softprops/action-gh-release@v2
@@ -93,7 +93,7 @@ jobs:
           fail_on_unmatched_files: false
           generate_release_notes: true
           files: |
-            WinNUT_V2/WinNUT.Client/publish/_WinNUT-Client-ClickOnce-Installer.application
+            WinNUT-Cursed/WinNUT.Client/publish/_WinNUT-Client-ClickOnce-Installer.application
             ${{ env.ARCHIVE_NAME }}
             
 # Leave out other files until we no longer need the MSI be first in the assets list.

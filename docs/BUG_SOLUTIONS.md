@@ -8,7 +8,7 @@ Short notes for recurring fixes in this repo. Add an entry when you fix a user-f
 
 **Cause:** The property setter validated input but never assigned `_MaxEvents`.
 
-**Fix:** Assign `_maxEvents = value` after validation in [Logger.cs](../WinNUT_V2/WinNUT.Client.Common/Logger.cs).
+**Fix:** Assign `_maxEvents = value` after validation in [Logger.cs](../WinNUT-Cursed/WinNUT.Client.Common/Logger.cs).
 
 ## Logger: NullReference after failed log file init (2025)
 

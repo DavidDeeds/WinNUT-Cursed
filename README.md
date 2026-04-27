@@ -36,7 +36,7 @@ flowchart LR
 | 2010-2011 | `WinNUT` re-host | Google Code archive | The NUT project history says the older `WinNUT` codebase was re-hosted on Google Code in 2010 and abandoned again in 2011. |
 | 2016+ | `Windows-Nut` | AutoIt remix | `crazytiti/Windows-Nut` describes itself as a remix of the original Windows NUT client. |
 | 2019-2021 | `gawindx/WinNUT-Client` | GitHub / Visual Basic .NET era | This is the modern GitHub-era WinNUT home credited to Gawindx (Decaux Nicolas). |
-| 2021 | `WinNUT-Client V2` | Visual Basic .NET rewrite | The local changelog records version `2.0.0.0` as a complete rewrite of WinNUT in Visual Basic. |
+| 2021 | `WinNUT-Client V2` | Visual Basic .NET rewrite | Upstream WinNUT release history records version `2.0.0.0` as a complete rewrite of WinNUT in Visual Basic. |
 | 2022-2025 | `nutdotnet/WinNUT-Client` | GitHub / NUT Dot Net stewardship | The project moved into the `nutdotnet` organization for ongoing maintenance and releases. |
 | 2022 | `Coco.Nut` | Future-oriented C# concept | Announced by the maintainers as the longer-term modern successor direction rather than a direct continuation of this WinForms codebase. |
 | 2026 | `WinNUT-Cursed` | Cursor AI migration repo | This repository focuses on translating the existing VB.NET WinForms application into C# while preserving behavior. |
@@ -45,8 +45,12 @@ flowchart LR
 
 - Preserve the existing WinNUT desktop behavior while porting the implementation to C#.
 - Migrate shared protocol, updater, and legacy settings code into reusable C# projects.
-- Convert WinForms UI forms and controls without losing installer, publishing, or localization support.
+- Convert WinForms UI forms and controls while preserving installer integration, publishing flow, and the active `.resx` resource structure.
 - Use Cursor AI agents as the main acceleration layer for refactors, code translation, cleanup, and build-system updates.
+
+## Release History
+
+This fork starts fresh as a C# migration workspace. For release notes and project history before `WinNUT-Cursed`, see the upstream [nutdotnet/WinNUT-Client releases](https://github.com/nutdotnet/WinNUT-Client/releases) and the upstream [`CHANGELOG.md`](https://github.com/nutdotnet/WinNUT-Client/blob/dev-2.3/CHANGELOG.md).
 
 ## Credits And Copyright
 
