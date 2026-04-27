@@ -47,6 +47,7 @@ flowchart LR
 - Migrate shared protocol, updater, and legacy settings code into reusable C# projects.
 - Convert WinForms UI forms and controls while preserving installer integration, publishing flow, and the active `.resx` resource structure.
 - Use Cursor AI agents as the main acceleration layer for refactors, code translation, cleanup, and build-system updates.
+- Track the current migration plan in [`docs/PLAN.md`](docs/PLAN.md).
 
 ## Release History
 
