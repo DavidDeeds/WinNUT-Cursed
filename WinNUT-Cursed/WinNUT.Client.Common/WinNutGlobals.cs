@@ -23,12 +23,13 @@ public static class WinNutGlobals
     static WinNutGlobals()
     {
         var entry = Assembly.GetEntryAssembly() ?? Assembly.GetExecutingAssembly();
-        ProgramName = entry.GetCustomAttribute<AssemblyProductAttribute>()?.Product ?? "WinNUT";
+        ProgramName = entry.GetCustomAttribute<AssemblyProductAttribute>()?.Product ?? "WinNUT-Cursed";
         ProgramVersion = entry.GetName().Version?.ToString() ?? "0.0.0.0";
         var firstDot = ProgramVersion.IndexOf('.');
         var secondDot = firstDot >= 0 ? ProgramVersion.IndexOf('.', firstDot + 1) : -1;
         ShortProgramVersion = secondDot > 0 ? ProgramVersion.Substring(0, secondDot) : ProgramVersion;
-        GitHubUrl = entry.GetCustomAttribute<AssemblyTrademarkAttribute>()?.Trademark ?? "";
+        GitHubUrl = entry.GetCustomAttribute<AssemblyTrademarkAttribute>()?.Trademark ??
+                    "https://github.com/DavidDeeds/WinNUT-Cursed";
         Copyright = entry.GetCustomAttribute<AssemblyCopyrightAttribute>()?.Copyright ?? "";
 
         LogFile = new Logger(LogLvl.LOG_DEBUG);

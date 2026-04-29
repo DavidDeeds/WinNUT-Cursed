@@ -6,9 +6,9 @@ namespace WinNUT_Client_Common.Updater;
 
 public class UpdateUtil
 {
-    private const string RepositoryOwner = "nutdotnet";
-    private const string RepositoryName = "WinNUT-Client";
-    private static readonly string UserAgentHeader = RepositoryOwner;
+    private const string RepositoryOwner = "DavidDeeds";
+    private const string RepositoryName = "WinNUT-Cursed";
+    private static readonly string UserAgentHeader = RepositoryName;
     private const int ProgressChangedDelayMs = 500;
 
     private Release? _latestRelease;

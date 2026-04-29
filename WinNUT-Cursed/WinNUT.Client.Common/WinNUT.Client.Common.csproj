@@ -9,7 +9,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Deterministic>false</Deterministic>
     <GenerateAssemblyInfo>true</GenerateAssemblyInfo>
-    <AssemblyTrademark>https://github.com/nutdotnet/WinNUT-Client</AssemblyTrademark>
+    <AssemblyTrademark>https://github.com/DavidDeeds/WinNUT-Cursed</AssemblyTrademark>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.VisualBasic" />

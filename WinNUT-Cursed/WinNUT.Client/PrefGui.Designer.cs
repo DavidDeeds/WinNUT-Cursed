@@ -562,6 +562,7 @@ partial class PrefGui
             resources.GetString("Cbx_Branch_Update.Items"),
             resources.GetString("Cbx_Branch_Update.Items1")
         });
+        Cbx_Branch_Update.Enabled = false;
         resources.ApplyResources(Cbx_Branch_Update, "Cbx_Branch_Update");
         Cbx_Branch_Update.Name = "Cbx_Branch_Update";
         Pref_TlTip.SetToolTip(Cbx_Branch_Update, resources.GetString("Cbx_Branch_Update.ToolTip"));
@@ -575,22 +576,26 @@ partial class PrefGui
             resources.GetString("Cbx_Delay_Verif.Items1"),
             resources.GetString("Cbx_Delay_Verif.Items2")
         });
+        Cbx_Delay_Verif.Enabled = false;
         resources.ApplyResources(Cbx_Delay_Verif, "Cbx_Delay_Verif");
         Cbx_Delay_Verif.Name = "Cbx_Delay_Verif";
         Pref_TlTip.SetToolTip(Cbx_Delay_Verif, resources.GetString("Cbx_Delay_Verif.ToolTip"));
         //
         // Lbl_Branch_Update
         //
+        Lbl_Branch_Update.Enabled = false;
         resources.ApplyResources(Lbl_Branch_Update, "Lbl_Branch_Update");
         Lbl_Branch_Update.Name = "Lbl_Branch_Update";
         //
         // Lbl_Delay_Verif
         //
+        Lbl_Delay_Verif.Enabled = false;
         resources.ApplyResources(Lbl_Delay_Verif, "Lbl_Delay_Verif");
         Lbl_Delay_Verif.Name = "Lbl_Delay_Verif";
         //
         // Cb_Update_At_Start
         //
+        Cb_Update_At_Start.Enabled = false;
         resources.ApplyResources(Cb_Update_At_Start, "Cb_Update_At_Start");
         Cb_Update_At_Start.Name = "Cb_Update_At_Start";
         Pref_TlTip.SetToolTip(Cb_Update_At_Start, resources.GetString("Cb_Update_At_Start.ToolTip"));

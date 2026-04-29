@@ -66,7 +66,7 @@ internal sealed partial class Settings : ApplicationSettingsBase
         set => this[nameof(UP_CheckAtStart)] = value;
     }
 
-    [UserScopedSetting, DefaultSettingValue("2")]
+    [UserScopedSetting, DefaultSettingValue("0")]
     public int UP_AutoChkDelay
     {
         get => (int)this[nameof(UP_AutoChkDelay)];

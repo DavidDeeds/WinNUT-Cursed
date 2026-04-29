@@ -12897,7 +12897,7 @@
         "Product"
         {
         "Name" = "8:Microsoft Visual Studio"
-        "ProductName" = "8:WinNUT Client"
+        "ProductName" = "8:WinNUT-Cursed"
         "ProductCode" = "8:{122404DC-404B-4173-B0D6-03E116D14C65}"
         "PackageCode" = "8:{AF32890B-CDBA-4F96-8310-2DFFC72AF6A6}"
         "UpgradeCode" = "8:{7EA17151-76E7-4E29-8F6A-621C1B4144C2}"
@@ -12906,15 +12906,15 @@
         "RemovePreviousVersions" = "11:TRUE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:FALSE"
-        "ProductVersion" = "8:2.3.9492"
+        "ProductVersion" = "8:3.0.0"
         "Manufacturer" = "8:NUTDotNet"
         "ARPHELPTELEPHONE" = "8:"
-        "ARPHELPLINK" = "8:https://github.com/nutdotnet/WinNUT-Client/discussions"
-        "Title" = "8:WinNUT Client Setup"
+        "ARPHELPLINK" = "8:https://github.com/DavidDeeds/WinNUT-Cursed"
+        "Title" = "8:WinNUT-Cursed Setup"
         "Subject" = "8:"
         "ARPCONTACT" = "8:Gawindx, gbakeman, et. al."
         "Keywords" = "8:WinNUT, nut, ups"
-        "ARPCOMMENTS" = "8:WinNUT Client"
+        "ARPCOMMENTS" = "8:WinNUT-Cursed"
         "ARPURLINFOABOUT" = "8:"
         "ARPPRODUCTICON" = "8:_8AE7328530F94584B6AB9A434BF70E63"
         "ARPIconIndex" = "3:0"
@@ -13021,7 +13021,7 @@
         {
             "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_0FD0F28955E440E09EFCC0CA9AA608D2"
             {
-            "Name" = "8:WinNUT Client"
+            "Name" = "8:WinNUT-Cursed"
             "Arguments" = "8:"
             "Description" = "8:"
             "ShowCmd" = "3:1"
@@ -13035,7 +13035,7 @@
             }
             "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_3F10F0675EF14A45809A83189C7C20C7"
             {
-            "Name" = "8:WinNUT Client"
+            "Name" = "8:WinNUT-Cursed"
             "Arguments" = "8:"
             "Description" = "8:"
             "ShowCmd" = "3:1"

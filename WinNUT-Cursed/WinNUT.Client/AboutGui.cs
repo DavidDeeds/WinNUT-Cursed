@@ -20,7 +20,17 @@ public partial class AboutGui : Form
     {
         Lbl_ProgNameVersion.Text = WinNutGlobals.ProgramName + Environment.NewLine + "Version " +
                                    WinNutGlobals.ProgramVersion;
-        Lbl_Copyright_2019.Text = WinNutGlobals.Copyright.Replace("©", Environment.NewLine + "©");
+        Lbl_Preamble.Text =
+            "WinNUT-Cursed exists to carry the WinNUT V2 WinForms client forward while migrating it from " +
+            "Visual Basic .NET to C# with Cursor AI agents in 2026.";
+        Lbl_Copyright_2006.Text =
+            "Original WinNUT lineage:" + Environment.NewLine +
+            "Michael Liberman © 2006-2007" + Environment.NewLine +
+            "SourceForge: https://sourceforge.net/projects/winnutclient";
+        Lbl_Copyright_2019.Text =
+            "Modern WinNUT lineage:" + Environment.NewLine +
+            "Gawindx (Decaux Nicolas) © 2019-2021" + Environment.NewLine +
+            "NUT Dot Net project © 2022+";
         LkLbl_Github.Text = WinNutGlobals.GitHubUrl;
         foreach (Form f in Application.OpenForms)
         {

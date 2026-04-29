@@ -395,5 +395,12 @@ FodyWeavers.xsd
 *.msm
 *.msp
 
+# Local machine config, secrets, and exported runtime settings
+**/user.config
+**/*.local.config
+**/*.secrets.json
+.env
+.env.*
+
 # JetBrains Rider
 *.sln.iml

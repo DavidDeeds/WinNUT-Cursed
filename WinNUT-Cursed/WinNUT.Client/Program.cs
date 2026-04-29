@@ -20,7 +20,7 @@ internal static class Program
         Application.SetCompatibleTextRenderingDefault(false);
         Application.ApplicationExit += (_, _) => Settings.Default.Save();
 
-        const string mutexName = "WinNUT-Client-SingleInstance";
+        const string mutexName = "WinNUT-Cursed-SingleInstance";
         using var mutex = new Mutex(true, mutexName, out var createdNew);
         if (!createdNew)
         {

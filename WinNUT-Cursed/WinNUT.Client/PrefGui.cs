@@ -69,6 +69,14 @@ public partial class PrefGui : Form
         return int.TryParse(digits, out var hz) ? hz : Settings.Default.CAL_FreqInNom;
     }
 
+    private static void DisableUpdatePreferences()
+    {
+        var s = Settings.Default;
+        s.UP_CheckAtStart = false;
+        s.UP_AutoChkDelay = 0;
+        s.UP_Branch = 0;
+    }
+
     private void SaveParams()
     {
         try
@@ -105,9 +113,7 @@ public partial class PrefGui : Form
             s.PW_StopDelaySec = int.Parse(Tb_Delay_Stop.Text);
             s.PW_UserExtendStopTimer = Cb_ExtendTime.Checked;
             s.PW_ExtendDelaySec = int.Parse(Tb_GraceTime.Text);
-            s.UP_CheckAtStart = Cb_Update_At_Start.Checked;
-            s.UP_AutoChkDelay = Cbx_Delay_Verif.SelectedIndex;
-            s.UP_Branch = Cbx_Branch_Update.SelectedIndex;
+            DisableUpdatePreferences();
 
             s.Save();
             var runKey = @"SOFTWARE\Microsoft\Windows\CurrentVersion\Run";
@@ -202,9 +208,10 @@ public partial class PrefGui : Form
             Tb_Delay_Stop.Text = s.PW_StopDelaySec.ToString();
             Cb_ExtendTime.Checked = s.PW_UserExtendStopTimer;
             Tb_GraceTime.Text = s.PW_ExtendDelaySec.ToString();
-            Cb_Update_At_Start.Checked = s.UP_CheckAtStart;
-            Cbx_Delay_Verif.SelectedIndex = s.UP_AutoChkDelay;
-            Cbx_Branch_Update.SelectedIndex = s.UP_Branch;
+            DisableUpdatePreferences();
+            Cb_Update_At_Start.Checked = false;
+            Cbx_Delay_Verif.SelectedIndex = 0;
+            Cbx_Branch_Update.SelectedIndex = 0;
             if (CB_Systray.Checked)
             {
                 CB_Start_Mini.Enabled = true;
@@ -234,7 +241,11 @@ public partial class PrefGui : Form
                 Tb_GraceTime.Enabled = false;
             }
 
-            Cb_Update_At_Start_CheckedChanged(this, EventArgs.Empty);
+            Cb_Update_At_Start.Enabled = false;
+            Cbx_Delay_Verif.Enabled = false;
+            Cbx_Branch_Update.Enabled = false;
+            Lbl_Delay_Verif.Enabled = false;
+            Lbl_Branch_Update.Enabled = false;
 
             foreach (TabPage tabCtrl in TabControl_Options.TabPages)
             {
@@ -309,8 +320,12 @@ public partial class PrefGui : Form
         }
     }
 
-    private void Cb_Update_At_Start_CheckedChanged(object? sender, EventArgs e) =>
-        Cbx_Delay_Verif.Enabled = Cb_Update_At_Start.Checked;
+    private void Cb_Update_At_Start_CheckedChanged(object? sender, EventArgs e)
+    {
+        Cb_Update_At_Start.Checked = false;
+        Cbx_Delay_Verif.Enabled = false;
+        Cbx_Branch_Update.Enabled = false;
+    }
 
     private void Number_Validating(object? sender, CancelEventArgs e)
     {
